@@ -41,7 +41,7 @@
     },
     "linux": {
       "category": "Utility",
-      "icon": "build/icon.png"
+      "icon": "build/icons/256x256.png"
     }
   }
 }

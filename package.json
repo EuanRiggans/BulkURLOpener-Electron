@@ -31,5 +31,17 @@
     "electron": "^7.1.1",
     "spectron": "^9.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "build": {
+    "mac": {
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "icon": "build/icon.png"
+    },
+    "linux": {
+      "category": "Utility",
+      "icon": "build/icon.png"
+    },
+  }
 }

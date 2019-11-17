@@ -10,17 +10,18 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 1280,
-        height: 720,
+        width: 1000,
+        height: 620,
         webPreferences: {
             nodeIntegration: true
         },
         icon: './app/icon/128.png'
     })
+    win.autoHideMenuBar = true;
     win.loadFile('./app/popup.html')
 
     // Open the DevTools. Automated test to make sure this is closed(?)
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {

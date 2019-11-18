@@ -1,6 +1,6 @@
 {
   "name": "bulkurlopener",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Desktop version of the Bulk URL Opener browser extension",
   "main": "main.js",
   "scripts": {
@@ -33,15 +33,8 @@
   },
   "dependencies": {},
   "build": {
-    "mac": {
-      "icon": "build/icon.png"
-    },
-    "win": {
-      "icon": "build/icon.png"
-    },
     "linux": {
-      "category": "Utility",
-      "icon": "build/icons/256x256.png"
+      "category": "Utility"
     }
   }
 }

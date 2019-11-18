@@ -36,5 +36,9 @@ git clone https://github.com/EuanRiggans/BulkURLOpener-Electron.git
 ```
 
 ```
+npm install
+```
+
+```
 npm start
 ```

@@ -66,6 +66,28 @@
                         <option id="allOpenedTabs" value="">All opened tabs</option>
                     </select>
                 </div>
+                <hr>
+                <div id="nonURLHandler">
+                    <p class="setting-title">How to handle non-urls:</p>
+                    <label for="nonURLHandlerSetting">What should happen if a string is detected as not being a
+                        url:</label>
+                    <select class="form-control" id="nonURLHandlerSetting">
+                        <option id="searchForString" value="" selected>Open in a search window</option>
+                        <option id="ignoreString" value="">Completely ignore the string</option>
+                        <option id="attemptToExtractURL" value="">Attempt to extract a url from the string</option>
+                    </select>
+                </div>
+                <hr>
+                <div id="selectedSearchEngine">
+                    <p class="setting-title">Search Engine Selection:</p>
+                    <label for="selectedSearchEngineSetting">If a non-url is to be searched for (depending on the above
+                        setting), which search engine should be used:</label>
+                    <select class="form-control" id="selectedSearchEngineSetting">
+                        <option id="googleEngine" value="" selected>Google</option>
+                        <option id="duckduckgoEngine" value="">DuckDuckGo</option>
+                        <option id="bingEngine" value="">Bing</option>
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline-primary" id="saveSettings" type="button">Save settings</button>

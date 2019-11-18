@@ -1,5 +1,5 @@
 $(document).ready(function () {
     $('#closeModal').click(function () {
-        window.location.replace("popup.html");
+        window.location.replace("help.html");
     });
 });

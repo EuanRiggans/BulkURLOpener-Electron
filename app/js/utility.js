@@ -164,12 +164,7 @@ function saveList(Id, newListObject) {
     localStorage.setItem(Id, JSON.stringify(newListObject));
     localStorage.setItem("maxID", Id);
     alert("List saved successfully!");
-    if (checkHostType() === "firefox") {
-        // alert("Unable to close window due to Firefox security policy. Please close this window manually.");
-        // window.close();
-    } else if (checkHostType() === "chrome") {
-        window.close();
-    }
+    window.location.replace("popup.html");
 }
 
 /**
@@ -180,12 +175,7 @@ function saveSettings(userSettings) {
     removeList("settings", false);
     localStorage.setItem("settings", JSON.stringify(userSettings));
     alert("Settings successfully saved!");
-    if (checkHostType() === "firefox") {
-        // alert("Unable to close window due to Firefox security policy. Please close this window manually.");
-        // window.close();
-    } else if (checkHostType() === "chrome") {
-        window.close();
-    }
+    window.location.replace("popup.html");
 }
 
 /**

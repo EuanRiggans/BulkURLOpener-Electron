@@ -70,7 +70,7 @@ $(() => {
     });
 
     document.getElementById("version").textContent = "- Version " + getCurrentVersion();
-})
+});
 
 /**
  *  Will open all of the urls in the textarea
@@ -89,35 +89,6 @@ function clearLinksList() {
 String.prototype.trim = function () {
     return this.replace(/^\s+|\s+$/g, '');
 };
-
-/**
- * Checks if a given string is a valid url
- * @param string    The string to check
- * @returns {boolean}   Whether string is valid url
- */
-function isProbablyUrl(string) {
-    let substr = string.substring(0, 4).toLowerCase();
-    if (substr === 'ftp:' || substr === 'www.') {
-        return true;
-    }
-
-    substr = string.substring(0, 5).toLowerCase();
-    if (substr === 'http:') {
-        return true;
-    }
-
-    substr = string.substring(0, 6).toLowerCase();
-    if (substr === 'https:') {
-        return true;
-    }
-
-    substr = string.substring(0, 7).toLowerCase();
-    if (substr === 'chrome:') {
-        return true;
-    }
-
-    return false;
-}
 
 /**
  * Handles the opening of lists
@@ -155,27 +126,12 @@ function openList(list) {
  * @param tabCreationDelay  The delay between opening a new url
  */
 function linksIterator(i, strings, tabCreationDelay) {
-    let ignoreURL = false;
     strings[i] = strings[i].trim();
     if (strings[i] === '') {
         return;
     }
     let url = strings[i];
-    if (!isProbablyUrl(url) && getSetting('non_url_handler') === "searchForString") {
-        url = encodeSearchQuery(url);
-    } else if (!isProbablyUrl(url) && getSetting('non_url_handler') === "ignoreString") {
-        ignoreURL = true;
-    } else if (!isProbablyUrl(url) && getSetting('non_url_handler') === "attemptToExtractURL") {
-        const extractedString = extractURLFromString(url);
-        if (isProbablyUrl(extractedString)) {
-            url = extractedString;
-        } else {
-            ignoreURL = true;
-        }
-    }
-    if (!ignoreURL) {
-        shell.openExternal(url);
-    }
+    linksIteratorProcessURL(url);
     i++;
     if (i < strings.length) {
         setTimeout(linksIterator, tabCreationDelay, i, strings, tabCreationDelay);
@@ -430,12 +386,14 @@ function createSettings() {
     if (!settingsList) {
         const newSettings = {
             object_description: "user_settings",
-            tab_creation_delay: 1,
+            tab_creation_delay: 0,
             night_mode: 0,
             auto_open_lists: 0,
             default_list_open: -1,
             custom_theme: "defaultBoostrap",
-            currently_opened_tabs_display: "currentWindow"
+            currently_opened_tabs_display: "currentWindow",
+            non_url_handler: "searchForString",
+            search_engine: "googleEngine"
         };
         localStorage.setItem("settings", JSON.stringify(newSettings));
     }

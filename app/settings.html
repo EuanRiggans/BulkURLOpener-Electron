@@ -62,7 +62,7 @@
                     <p class="setting-title">Currently opened tabs display:</p>
                     <label for="currentlyOpenedSetting">Which URLS should be shown as 'currently opened':</label>
                     <select class="form-control" id="currentlyOpenedSetting">
-                        <option id="currentWindow" value="" selected>Current window tabs</option>
+                        <option id="currentWindow" selected value="">Current window tabs</option>
                         <option id="allOpenedTabs" value="">All opened tabs</option>
                     </select>
                 </div>
@@ -101,15 +101,12 @@
         module = undefined;
     }
 </script>
-
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/utility.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/settings.js"></script>
-<script type="text/javascript" src="js/lists.js"></script>
 <script type="text/javascript" src="js/custom-styles.js" id="tempStylesheetLoader"></script>
-
 <script>
     if (window.module) module = window.module;
 </script>
-
 </html>

@@ -1,29 +1,31 @@
-const {
-    shell
-} = require('electron');
+if(typeof shell === "undefined") {
+    const {
+        shell
+    } = require('electron');
+}
 
 $(document).ready(function () {
-    $('#closeModal').click(function () {
+    document.getElementById('closeModal').addEventListener('click', () => {
         window.location.replace("popup.html");
     });
-    $('#openChangelog').click(function () {
+    document.getElementById('openChangelog').addEventListener('click', () => {
         window.location.replace("changelog.html");
     });
-    $('#openGithub').click(function () {
+    document.getElementById('openGithub').addEventListener('click', () => {
         openGithub();
     });
-    $('#openGithubBugs').click(function () {
+    document.getElementById('openGithubBugs').addEventListener('click', () => {
         openElectronIssues();
     });
-    $('#openGithubSuggestions').click(function () {
+    document.getElementById('openGithubSuggestions').addEventListener('click', () => {
         openElectronIssues();
     });
 });
 
 function openGithub() {
-    shell.openExternal('https://euan.link/github');
+    shell.openExternal("https://euan.link/github");
 }
 
 function openElectronIssues() {
-    shell.openExternal('https://euan.link/buo-electron-issue');
+    shell.openExternal("https://euan.link/buo-electron-issue");
 }

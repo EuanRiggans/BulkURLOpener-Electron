@@ -2,8 +2,6 @@ const {
     shell
 } = require('electron');
 
-const version = "1.5.1"
-
 $(() => {
     upgradeToJSONFormatting();
     createSettings();
@@ -336,14 +334,6 @@ function extractURLFromString(string) {
         url = "noextractionsuccess";
     }
     return url;
-}
-
-/**
- * Gets the current version of the extension from the manifest
- * @returns {string}    The current version
- */
-function getCurrentVersion() {
-    return (version);
 }
 
 /**

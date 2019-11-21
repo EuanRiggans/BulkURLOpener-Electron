@@ -1,4 +1,13 @@
 /**
+ * Gets the current version of the extension from the manifest
+ * @returns {string}    The current version
+ */
+function getCurrentVersion() {
+    const version = "1.6.0";
+    return (version);
+}
+
+/**
  * Checks which browser is being used - as this determines which api to use (chrome or browser)
  * @returns {string}
  */
@@ -139,22 +148,6 @@ function extractURLFromString(string) {
         url = "noextractionsuccess";
     }
     return url;
-}
-
-/**
- * Gets the current version of the extension from the manifest
- * @returns {string}    The current version
- */
-function getCurrentVersion() {
-    let manifestData;
-    if (checkHostType() === "firefox") {
-        manifestData = browser.runtime.getManifest();
-
-    } else if (checkHostType() === "chrome") {
-        manifestData = chrome.runtime.getManifest();
-
-    }
-    return (manifestData.version);
 }
 
 /**

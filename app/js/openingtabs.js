@@ -1,6 +1,3 @@
-const {
-    shell
-} = require('electron')
 $(document).ready(function () {
     let tabCreationDelay = getSetting("tab_creation_delay");
     tabCreationDelay = tabCreationDelay * 1000;

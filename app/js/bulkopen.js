@@ -1,6 +1,3 @@
-const {
-    shell
-} = require('electron');
 
 $(() => {
     upgradeToJSONFormatting();

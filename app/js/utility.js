@@ -1,3 +1,8 @@
+const {
+    shell
+} = require('electron');
+
+
 /**
  * Gets the current version of the extension from the manifest
  * @returns {string}    The current version
